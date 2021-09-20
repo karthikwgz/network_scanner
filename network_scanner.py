@@ -3,19 +3,6 @@
 import nmap
 
 
-def menu():
-	print("__________________Main Menu____________________")
-	print("1.Scan single host")
-	print("2.Scan range")
-	print("3.Scan network")
-	print("4.Agressive scan")
-	print("5.Scan ARP packet")
-	print("6.Scan all port only")
-	print("7.Scan in verbose mode")
-	print("8.Exit")
-
-
-
 def scan_single_host():
 	nm = nmap.PortScanner()
 	ip = input("Enter the IP")
@@ -120,29 +107,3 @@ def verbose_scan():
 					print(f"Os-type : {j['type']}")		
 		except:
 			print("Use root priviliege")
-		
-			
-
-while True:
-	menu()
-	ch = int(input("Enter your choice"))
-	if ch == 1:
-		scan_single_host()
-	elif ch == 2:
-		scan_range()
-	elif ch == 3:
-		scan_network()
-
-	elif ch == 4:
-		aggressive_scan()
-	elif ch == 5:
-		arp_packet()
-	elif ch == 6:
-		scan_all_ports()
-	elif ch == 7:
-		verbose_scan()
-	elif ch == 8:
-		break
-	else:
-		print("Wrong choice")
-
